@@ -1,0 +1,362 @@
+@import "color.scss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+// CARD
+body{
+    overflow: auto;
+}
+
+.bg-card{
+   float: left; 
+   font-family: 'Space Grotesk';
+    background: url("/images/bg-main-desktop.png");
+    height: 100vh;
+    width: 300px;
+    & .card-fornt{
+        position: absolute;
+        left: 95px;
+        top: 180px;
+        padding: 1.5rem;
+        width: 320px;
+        height: 320px;
+        background: url("/images/bg-card-front.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        color: $White;
+        font-weight: 500;
+        & .card-logo{
+            background: url("/images/card-logo.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 60px;
+            height: 30px;
+        }
+
+        & .card-number{
+            letter-spacing: 2px;
+            font-weight: 200;
+            padding: 2.5rem 0 1rem 0;
+            font-size: larger;
+        }
+        & .card-info{
+            display: flex;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 12px;
+            justify-content: space-between;
+        }
+    }
+    & .card-back{
+        position: relative;
+        background: url("/images/bg-card-back.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 320px;
+        height: 320px;
+        top:400px;
+        left: 140px;
+        & .card-cvc{
+            color: $White;
+            position: absolute;
+            top: 25%;
+            font-size: 14px;
+            transform: translateY(-25%);
+            right: 35px ;
+        }
+    }
+}
+.form-submit{
+    font-family: 'Space Grotesk';
+    height: 100vh;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .form{
+        padding: .5rem 0;
+       & h4{    
+        padding: 0 0 0.5rem 0; 
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 300;
+        }
+      
+        & #cname,#cnumber{
+            font-weight: 700;
+            font-size: 16px;
+            width: 100%;
+            padding: .8rem;
+            border-radius: .5rem;
+            border: none;
+            border: 1px solid $Lightgrayishviolet,;
+            &:is(&:hover, &:focus){
+                border: 1px solid $Lineargradient;
+                outline: 0;
+            }
+            &::placeholder{
+                color: rgba($Darkgrayishviolet,.5);
+            }
+        }
+        & .invalidinput{
+            font-weight: 700;
+            font-size: 16px;
+            width: 100%;
+            padding: .8rem;
+            border-radius: .5rem;
+            border: none;
+            border: 1px solid $Red !important;
+            &::placeholder{
+                color: rgba($Darkgrayishviolet,.5);
+            }
+        }
+    
+        & .errorms{
+            visibility: hidden;
+            padding: .2rem 0 0 0 ;
+            font-size: 12px;
+            color: $Red;
+        }
+    }
+    & .form:nth-of-type(3){
+        display: inline-block;
+        width: 50%;
+        & #cexp1,#cexp2{
+            font-weight: 700;
+            font-size: 16px;
+            width: 40%;
+            padding: .5rem;
+            border-radius: .5rem;
+            border: none;
+            border: 1px solid $Lightgrayishviolet;
+            &:is(&:hover, &:focus){
+                border: 1px solid $Lineargradient;
+                outline: 0;
+            }
+            &::placeholder{
+                color: rgba($Darkgrayishviolet,.5);
+            }
+        }
+        & .invalidinput{
+            font-weight: 700;
+            font-size: 16px;
+            width: 40%;
+            padding: .5rem;
+            border-radius: .5rem;
+            border: none;
+            border: 1px solid $Red;
+
+            &::placeholder{
+                color: rgba($Darkgrayishviolet,.5);
+            }
+        }
+        
+    }
+    & .form:nth-of-type(4){
+        display: inline-block;
+        
+        width: 48.9%;
+        & #ccvc{
+            font-size: 16px;
+            font-weight: 700;
+            width: 100%;
+            border-radius: .5rem;
+            padding: .5rem;
+            border: none;
+            border: 1px solid $Lightgrayishviolet;
+            &:is(&:hover, &:focus){
+                border: 1px solid $Lineargradient;
+                outline: 0;
+            }
+            &::placeholder{
+                color: rgba($Darkgrayishviolet,.5);
+            }
+        }
+    }
+
+    #submit{
+        font-family: 'Space Grotesk';
+        color: $White;
+        width: 100%;
+        border-radius: .5rem;
+        border: 0;
+        outline: 0;
+        background-color:$Verydarkviolet;
+        margin-top: 1rem;
+        padding: .8rem;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba($Verydarkviolet,.9);
+        }
+    }
+
+    & .ty{
+        display: none;
+        width: 350px;
+        text-align: center;
+        font-family: 'Space Grotesk';
+        & .image{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url("/images/icon-complete.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 70px;
+            height: 70px;
+
+        }
+        & h1{
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 26px;
+            letter-spacing: 2px;
+            padding: 16px 0;
+          
+        }
+        & p{
+            color: $Darkgrayishviolet;
+            margin-bottom: 50px;
+        }
+        & #submitreturn{
+            padding: 1rem;
+            width: 100%;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: $White;
+            outline: 0;
+            border:  0;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: $Verydarkviolet;
+            font-weight: 500;
+            &:hover{
+                background-color: rgba($Verydarkviolet,.9);
+            }
+        }
+    }    
+
+
+
+}
+@media screen and (max-width:376px){
+  .bg-card{
+    float: none;
+    display: block;
+    width: 100%;
+    height: 250px;
+    background: url("/images/bg-main-mobile.png");
+    & .card-fornt{
+        top:130px;
+        left: 40%;
+        transform: translateX(-40%);
+    z-index: 111;
+    }
+    & .card-back{
+        top: 30px;
+        z-index: 99;
+        left: 70%;
+        transform: translateX(-70%);
+    }
+  }
+.form-submit{
+        margin-top: 150px;
+        align-items: normal;
+        text-align: center;
+        width: 100%;   
+        & .form{
+            padding: 0 1rem;
+            text-align: left;
+            & h4{
+                text-align: left !important;
+            }
+        }
+        & .form:nth-of-type(3){
+            width: 45%;
+            
+        }
+            & #submit{
+                
+                width: 90%;
+                
+            }
+    }
+}
+@media screen and ( (min-width:376px) and (max-width:500px)){
+  .bg-card{
+    float: none;
+    display: block;
+    width: 100%;
+    height: 250px;
+    background: url("/images/bg-main-mobile.png");
+    & .card-fornt{
+        top:130px;
+        left: 40%;
+        transform: translateX(-40%);
+    z-index: 111;
+    }
+    & .card-back{
+        top: 30px;
+        z-index: 99;
+        left: 70%;
+        transform: translateX(-70%);
+    }
+  }
+.form-submit{
+        margin-top: 150px;
+        width: 100%; 
+        align-items: normal;
+         text-align: center;
+            & .form{ 
+               padding: 0 3rem;
+               text-align: left;
+               & h4{
+                text-align: left !important;
+                width: 130px;
+               }
+            }
+            & .form:nth-of-type(3){ 
+               width: 50%;
+            }
+            & #submit{
+                
+                width: 90%;
+            }
+    }
+}
+
+@media screen and (max-width:1096px){
+  .bg-card{
+    float: none;
+    display: block;
+    width: 100%;
+    height: 250px;
+    background: url("/images/bg-main-mobile.png");
+    & .card-fornt{
+        top:130px;
+        left: 40%;
+        transform: translateX(-40%);
+    z-index: 111;
+    }
+    & .card-back{
+        top: 30px;
+        z-index: 99;
+        left: 70%;
+        transform: translateX(-70%);
+    }
+  }
+  .form-submit{
+    margin-top: 150px;
+    align-items: normal;
+  }
+
+}
+
+
